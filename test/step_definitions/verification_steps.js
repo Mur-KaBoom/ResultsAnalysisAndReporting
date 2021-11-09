@@ -3,10 +3,10 @@ const { expect } = require('chai');
 const { browser} = require('protractor');
 setDefaultTimeout(60000);
 
-Then(/^Page title should be "([^"]*)"$/, async function (expectedPageTitle) {
-    expect(await browser.getTitle()).to.be.equal(expectedPageTitle);
+Then(/^Page title should be "([^"]*)"$/, async function (expectedResult) {
+    expect(await browser.getTitle()).to.be.equal(expectedResult);
 });
 
-Then(/^Page url should be "([^"]*)"$/, async function (expectedPageUrl) {
-    expect(await browser.getCurrentUrl()).to.be.equal(expectedPageUrl);
+Then(/^Page url should contain "([^"]*)"$/, async function (expectedResult) {
+    expect(await browser.getCurrentUrl()).to.contain(expectedResult);
 });
